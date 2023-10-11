@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style>
+            h1 {
+                color: blue;
+                text-align: center;
+            }
+            
+            form {
+                color: red;
+                text-align: center;
+                max-width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Person</h1>
+        <form method="post" action="{% url 'add' %}">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <br>
+            <input type="submit" value="submit">
+        </form>
+        <a href="{% url 'display'%}">display</a>
+    </body>
+</html>
